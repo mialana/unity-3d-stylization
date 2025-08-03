@@ -114,6 +114,8 @@ void ChooseColor_float(float3 Highlight, float3 Midtone, float3 Shadow, float Di
     {
         OUT = Highlight;
     }
+    float outAvg = (OUT.r + OUT.g + OUT.b) / 3.f;
+    // OUT = float3(outAvg, outAvg, outAvg);
 }
 
 void ChooseColor_float(float3 Highlight, float3 Shadow, float Diffuse, float Threshold, out float3 OUT)
@@ -126,4 +128,41 @@ void ChooseColor_float(float3 Highlight, float3 Shadow, float Diffuse, float Thr
     {
         OUT = Highlight;
     }
+}
+
+float2 RotateUV(float2 uv, float angle)
+{
+    angle = angle * 0.0174533;
+    float s = sin(angle);
+    float c = cos(angle);
+    uv -= 0.5;
+    float2 rotated;
+    rotated.x = uv.x * c - uv.y * s;
+    rotated.y = uv.x * s + uv.y * c;
+    return rotated + 0.5;
+}
+
+void TriplanarRotated_float(
+    float3 Position,
+    float3 Normal,
+    float Tile,
+    float Rotation,
+    Texture2D Texture, SamplerState Sampler,
+    out float4 Out)
+{
+    float Blend = 0.5;
+    float3 Node_UV = Position * Tile;
+    float3 Node_Blend = pow(abs(Normal), Blend);
+    Node_Blend /= dot(Node_Blend, 1.0);
+
+    // Apply same rotation to all projections
+    float2 uvX = RotateUV(Node_UV.zy, Rotation); // X axis projection (YZ plane)
+    float2 uvY = RotateUV(Node_UV.xz, Rotation); // Y axis projection (XZ plane)
+    float2 uvZ = RotateUV(Node_UV.xy, Rotation); // Z axis projection (XY plane)
+
+    float4 Node_X = SAMPLE_TEXTURE2D(Texture, Sampler, uvX);
+    float4 Node_Y = SAMPLE_TEXTURE2D(Texture, Sampler, uvY);
+    float4 Node_Z = SAMPLE_TEXTURE2D(Texture, Sampler, uvZ);
+
+    Out = Node_X * Node_Blend.x + Node_Y * Node_Blend.y + Node_Z * Node_Blend.z;
 }
