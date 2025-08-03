@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blue Toon 1
+  m_Name: White Toon
   m_Shader: {fileID: -6465566751694194690, guid: 4bb4208ba483a491cbb7cb889d941002,
     type: 3}
   m_Parent: {fileID: 0}
@@ -94,6 +94,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: bf81e69a167644a249067abd281d7843, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TriplanarRotatedCustomFunction_9b1af3b622e541e18658a6ac8785e44f_New3_4_Texture2D:
+        m_Texture: {fileID: 2800000, guid: bf81e69a167644a249067abd281d7843, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -146,19 +150,19 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Texture_Blend_Opacity: 0.36
-    - _Texture_Rotation: 3
-    - _Texture_Tiling: 3.6
+    - _Texture_Blend_Opacity: 0.544
+    - _Texture_Rotation: 73
+    - _Texture_Tiling: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Highlight: {r: 1, g: 0.52375716, b: 0.48627448, a: 1}
-    - _Midtone: {r: 1, g: 0.25973833, b: 0.17647058, a: 1}
+    - _Highlight: {r: 1, g: 1, b: 1, a: 1}
+    - _Midtone: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
     - _Ramped_Diffuse_Values: {r: 0.2, g: 0.4, b: 0.64, a: 0}
-    - _Shadow: {r: 0.43529412, g: 0.17707838, b: 0.13725492, a: 1}
+    - _Shadow: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Threshold: {r: 0.3, g: 0.7, b: 0, a: 0}
     - _Thresholds: {r: 0.3, g: 0.6, b: 0, a: 0}
