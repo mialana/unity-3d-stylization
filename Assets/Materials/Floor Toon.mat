@@ -124,6 +124,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Hard_Specular_Cutoff: 0.14
+    - _Hard_Specular_Mode: 0
     - _MAIN_LIGHT_SHADOWS_CASCADE: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
@@ -136,7 +138,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Specular_Cutoff: 0.75
-    - _Specular_Smoothness: 1
+    - _Specular_Smoothness: 0.561
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
@@ -155,5 +157,5 @@ Material:
     - _Shadow: {r: 0.28235298, g: 0.28235298, b: 0.28235298, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Threshold: {r: 0.3, g: 0.7, b: 0, a: 0}
-    - _Thresholds: {r: 0.3, g: 0.6, b: 0, a: 0}
+    - _Thresholds: {r: 0.84, g: 0.9, b: 0, a: 0}
   m_BuildTextureStacks: []

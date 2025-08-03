@@ -7,8 +7,8 @@ void GetMainLight_float(float3 WorldPos, out float3 Color, out float3 Direction,
     ShadowAtten = 1;
 #else
 #if SHADOWS_SCREEN
-        float4 clipPos = TransformWorldToClip(WorldPos);
-        float4 shadowCoord = ComputeScreenPos(clipPos);
+    float4 clipPos = TransformWorldToClip(WorldPos);
+    float4 shadowCoord = ComputeScreenPos(clipPos);
 #else
     float4 shadowCoord = TransformWorldToShadowCoord(WorldPos);
 #endif
@@ -21,20 +21,24 @@ void GetMainLight_float(float3 WorldPos, out float3 Color, out float3 Direction,
 #endif
 }
 
-float GetSmoothnessPower(float rawSmoothness) {
+float GetSmoothnessPower(float rawSmoothness)
+{
     return exp2(10 * rawSmoothness + 1);
 }
 
-void ComputeSpecularHighlight_float(float3 WorldNormal, float3 WorldViewDir, float3 LightDirection, float Diffuse, float Smoothness, float SpecularCutoff, out float Specular)
+void ComputeSpecularHighlight_float(float3 WorldNormal, float3 WorldViewDir, float3 LightDirection, float Diffuse, float Smoothness, float SpecularCutoff, bool IsHardSpecular, out float Specular)
 {
     Specular = saturate(dot(WorldNormal, normalize(LightDirection + normalize(WorldViewDir))));
     Specular = pow(Specular, GetSmoothnessPower(Smoothness));
-    Specular = step(SpecularCutoff, Specular) * Diffuse;
+
+    if (IsHardSpecular) 
+    {
+        Specular = step(SpecularCutoff, Specular);
+    }
+    Specular *= Diffuse;
 }
 
-void ComputeAdditionalLighting_float(float3 WorldPosition, float3 WorldNormal, float3 WorldViewDir, 
-    float2 Thresholds, float3 RampedDiffuseValues, float Smoothness, float SpecularCutoff,
-    out float3 Color, out float Diffuse)
+void ComputeAdditionalLighting_float(float3 WorldPosition, float3 WorldNormal, float3 WorldViewDir, float2 Thresholds, float3 RampedDiffuseValues, float Smoothness, float SpecularCutoff, bool IsHardSpecular, out float3 Color, out float Diffuse)
 {
     Color = float3(0, 0, 0);
     Diffuse = 0;
@@ -42,7 +46,7 @@ void ComputeAdditionalLighting_float(float3 WorldPosition, float3 WorldNormal, f
 #ifndef SHADERGRAPH_PREVIEW
 
     int pixelLightCount = GetAdditionalLightsCount();
-    
+
     for (int i = 0; i < pixelLightCount; ++i)
     {
         Light light = GetAdditionalLight(i, WorldPosition);
@@ -50,18 +54,23 @@ void ComputeAdditionalLighting_float(float3 WorldPosition, float3 WorldNormal, f
         uint light_i = tmp[i % 4];
 
         half shadowAtten = light.shadowAttenuation * AdditionalLightRealtimeShadow(light_i, WorldPosition, light.direction);
-        
+
         half NdotL = saturate(dot(WorldNormal, light.direction));
         half distanceAtten = light.distanceAttenuation;
 
         half thisDiffuse = distanceAtten * shadowAtten * NdotL;
 
         half thisSpecular = pow(saturate(dot(WorldNormal, normalize(light.direction + normalize(WorldViewDir)))), GetSmoothnessPower(Smoothness));
-        thisSpecular = step(SpecularCutoff, thisSpecular);
+
+        if (IsHardSpecular)
+        {
+            thisSpecular = step(SpecularCutoff, thisSpecular);
+        }
+
         thisSpecular *= thisDiffuse;
-        
+
         half rampedDiffuse = 0;
-        
+
         if (thisDiffuse < Thresholds.x)
         {
             rampedDiffuse = RampedDiffuseValues.x;
@@ -74,14 +83,12 @@ void ComputeAdditionalLighting_float(float3 WorldPosition, float3 WorldNormal, f
         {
             rampedDiffuse = RampedDiffuseValues.z;
         }
-        
-        
+
         if (shadowAtten * NdotL == 0)
         {
             rampedDiffuse = 0;
-
         }
-        
+
         if (light.distanceAttenuation <= 0)
         {
             rampedDiffuse = 0.0;
