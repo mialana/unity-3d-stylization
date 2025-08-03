@@ -25,18 +25,15 @@ float GetSmoothnessPower(float rawSmoothness) {
     return exp2(10 * rawSmoothness + 1);
 }
 
-void GetSmoothnessPower_float(float rawSmoothness, out float smoothnessPower) {
-    smoothnessPower = GetSmoothnessPower(rawSmoothness);
-}
-
-void ComputeSpecularHighlight_float(float3 WorldNormal, float3 WorldViewDir, float3 LightDirection, float Smoothness, out float Specular)
+void ComputeSpecularHighlight_float(float3 WorldNormal, float3 WorldViewDir, float3 LightDirection, float Diffuse, float Smoothness, float SpecularCutoff, out float Specular)
 {
     Specular = saturate(dot(WorldNormal, normalize(LightDirection + normalize(WorldViewDir))));
     Specular = pow(Specular, GetSmoothnessPower(Smoothness));
+    Specular = step(SpecularCutoff, Specular) * Diffuse;
 }
 
 void ComputeAdditionalLighting_float(float3 WorldPosition, float3 WorldNormal, float3 WorldViewDir, 
-    float2 Thresholds, float3 RampedDiffuseValues, float Smoothness,
+    float2 Thresholds, float3 RampedDiffuseValues, float Smoothness, float SpecularCutoff,
     out float3 Color, out float Diffuse)
 {
     Color = float3(0, 0, 0);
@@ -58,6 +55,10 @@ void ComputeAdditionalLighting_float(float3 WorldPosition, float3 WorldNormal, f
         half distanceAtten = light.distanceAttenuation;
 
         half thisDiffuse = distanceAtten * shadowAtten * NdotL;
+
+        half thisSpecular = pow(saturate(dot(WorldNormal, normalize(light.direction + normalize(WorldViewDir)))), GetSmoothnessPower(Smoothness));
+        thisSpecular = step(SpecularCutoff, thisSpecular);
+        thisSpecular *= thisDiffuse;
         
         half rampedDiffuse = 0;
         
@@ -86,9 +87,7 @@ void ComputeAdditionalLighting_float(float3 WorldPosition, float3 WorldNormal, f
             rampedDiffuse = 0.0;
         }
 
-        half specular = pow(saturate(dot(WorldNormal, normalize(light.direction + normalize(WorldViewDir)))), GetSmoothnessPower(Smoothness));
-
-        Color += max(rampedDiffuse+specular, 0) * light.color.rgb;
+        Color += max(rampedDiffuse + thisSpecular, 0) * light.color.rgb;
         Diffuse += rampedDiffuse;
     }
 #endif
