@@ -115,7 +115,7 @@ void ChooseColor_float(float3 Highlight, float3 Midtone, float3 Shadow, float Di
         OUT = Highlight;
     }
     float outAvg = (OUT.r + OUT.g + OUT.b) / 3.f;
-    OUT = float3(outAvg, outAvg, outAvg);
+    // OUT = float3(outAvg, outAvg, outAvg);
 }
 
 void ChooseColor_float(float3 Highlight, float3 Shadow, float Diffuse, float Threshold, out float3 OUT)

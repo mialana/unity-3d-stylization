@@ -26,7 +26,7 @@ public class NormalFeature : ScriptableRendererFeature
     // This method is called when setting up the renderer once per-camera.
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        if (renderingData.cameraData.cameraType == CameraType.Game)
+        // if (renderingData.cameraData.cameraType == CameraType.Game)
             renderer.EnqueuePass(m_NormalsPass);
     }
 }
@@ -58,8 +58,8 @@ class NormalsPass : ScriptableRenderPass
 
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
-        if (renderingData.cameraData.cameraType != CameraType.Game)
-            return;
+        // if (renderingData.cameraData.cameraType != CameraType.Game)
+        //     return;
         SortingCriteria sortingCriteria = renderingData.cameraData.defaultOpaqueSortFlags;
         DrawingSettings drawingSettings = CreateDrawingSettings(m_ShaderTagIdList, ref renderingData, sortingCriteria);
         drawingSettings.overrideMaterial = normalsMaterial;

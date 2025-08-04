@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Invert Mat
+  m_Name: FullScreen Invert Mat
   m_Shader: {fileID: -6465566751694194690, guid: a628e23d5433d45d89e18d76a89f7238,
     type: 3}
   m_Parent: {fileID: 0}

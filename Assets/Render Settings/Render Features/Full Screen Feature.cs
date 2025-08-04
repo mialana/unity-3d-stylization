@@ -25,7 +25,7 @@ public class FullScreenFeature : ScriptableRendererFeature
             this.settings = passSettings;
             this.renderPassEvent = settings.renderPassEvent;
 
-            if (settings.material == null) settings.material = CoreUtils.CreateEngineMaterial("Shader Graphs/Full Screen Invert");
+            if (settings.material == null) settings.material = CoreUtils.CreateEngineMaterial("Shader Graphs/FullScreen Invert");
         }
 
         // This method is called before executing the render pass.

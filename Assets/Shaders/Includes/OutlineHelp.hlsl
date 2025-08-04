@@ -8,5 +8,5 @@ void GetDepth_float(float2 uv, out float Depth)
 
 void GetNormal_float(float2 uv, out float3 Normal)
 {
-    Normal = SAMPLE_TEXTURE2D(_NormalsBuffer, sampler_point_clamp, uv).rgb;
+    Normal = SAMPLE_TEXTURE2D(_NormalBuffer, sampler_point_clamp, uv).rgb;
 }
