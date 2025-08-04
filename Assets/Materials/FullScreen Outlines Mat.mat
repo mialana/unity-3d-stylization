@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Testing Buffers
+  m_Name: FullScreen Outlines Mat
   m_Shader: {fileID: -6465566751694194690, guid: 07487f7a52aa447428771952ed260356,
     type: 3}
   m_Parent: {fileID: 0}
@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Normal_Buffer:
         m_Texture: {fileID: 8400000, guid: a348fe2d588e6ba48b8e31d4143cb7ba, type: 2}
         m_Scale: {x: 1, y: 1}
@@ -41,6 +45,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - _Debug_View: 0
+    - _Depth_Sensitivity: 3
+    - _Depth_Threshold: 0.22
+    - _Luminance_Threshold: 0.193
+    - _Normal_Threshold: 0.666
+    - _Outline_Thickness: 1.72
+    - _Robert_s_Cross_Multiplier: 1
+    m_Colors:
+    - _Adjust_Texel: {r: 4.52, g: 5.71, b: 0, a: 0}
+    - _Outline_Color: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
