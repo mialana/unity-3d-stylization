@@ -47,12 +47,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _Debug_View: 0
+    - _Depth_Multiplier: 1.31
     - _Depth_Sensitivity: 3
-    - _Depth_Threshold: 0.22
+    - _Depth_Threshold: 5
+    - _Luminance_Multiplier: 0
     - _Luminance_Threshold: 0.193
+    - _Normal_Multiplier: 0
     - _Normal_Threshold: 0.666
-    - _Outline_Thickness: 1.72
+    - _Outline_Thickness: 2.69
+    - _RGB_Multiplier: 2.1
+    - _RGB_Threshold: 0
     - _Robert_s_Cross_Multiplier: 1
+    - _Use_Sobel_Technique: 1
     m_Colors:
     - _Adjust_Texel: {r: 4.52, g: 5.71, b: 0, a: 0}
     - _Outline_Color: {r: 0, g: 0, b: 0, a: 0}

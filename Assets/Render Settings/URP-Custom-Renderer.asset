@@ -32,7 +32,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     renderPassEvent: 500
-    material: {fileID: 2100000, guid: 944b4510c2a53499a8cfaf496a1c3690, type: 2}
+    material: {fileID: 2100000, guid: 991492404e2544d7783ab1a3c581dc83, type: 2}
 --- !u!114 &-3644072642103574459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,9 +70,9 @@ MonoBehaviour:
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
   - {fileID: -5482176993186338297}
-  - {fileID: -4129834558194892815}
   - {fileID: -3644072642103574459}
-  m_RendererFeatureMap: 072a4f0d1265ebb3f13fa9a159e1afc64580b2373da76dcd
+  - {fileID: -4129834558194892815}
+  m_RendererFeatureMap: 072a4f0d1265ebb34580b2373da76dcdf13fa9a159e1afc6
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 0}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
