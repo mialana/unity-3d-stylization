@@ -20,7 +20,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _Global_Multiplier
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -47,19 +47,23 @@ Material:
     m_Ints: []
     m_Floats:
     - _Debug_View: 0
-    - _Depth_Multiplier: 1.31
+    - _Depth_Cutoff: 5
+    - _Depth_Multiplier: 1
     - _Depth_Sensitivity: 3
-    - _Depth_Threshold: 5
-    - _Luminance_Multiplier: 0
-    - _Luminance_Threshold: 0.193
-    - _Normal_Multiplier: 0
-    - _Normal_Threshold: 0.666
-    - _Outline_Thickness: 2.69
+    - _Depth_Threshold: 0
+    - _Global_Multiplier: 1
+    - _Luminance_Multiplier: 1
+    - _Luminance_Threshold: 0
+    - _Normal_Multiplier: 1
+    - _Normal_Threshold: 90
+    - _Outline_Thickness: 5
     - _RGB_Multiplier: 2.1
-    - _RGB_Threshold: 0
+    - _RGB_Threshold: 1.67
     - _Robert_s_Cross_Multiplier: 1
-    - _Use_Sobel_Technique: 1
+    - _Use_Sobel_Technique: 0
+    - _Visualize_Depth_Range: 0
     m_Colors:
     - _Adjust_Texel: {r: 4.52, g: 5.71, b: 0, a: 0}
+    - _Depth_Range: {r: 0, g: 10, b: 0, a: 0}
     - _Outline_Color: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

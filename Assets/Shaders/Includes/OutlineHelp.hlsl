@@ -3,11 +3,18 @@ SAMPLER(sampler_point_clamp);
 void GetDepth_float(float2 uv, out float Depth)
 {
     Depth = SHADERGRAPH_SAMPLE_SCENE_DEPTH(uv);
+    Depth = smoothstep(_Depth_Range.x, _Depth_Range.y, Depth);
+    Depth = Linear01Depth(Depth, _ZBufferParams);
+}
+
+float LinearizeDepth(float Depth)
+{
+    return Linear01Depth(Depth, _ZBufferParams);
 }
 
 void GetNormal_float(float2 uv, out float3 Normal)
 {
-    Normal = SAMPLE_TEXTURE2D(_Normal_Buffer, sampler_point_clamp, uv).rgb;
+    Normal = SAMPLE_TEXTURE2D(_Normal_Buffer, sampler_point_clamp, uv).rgb * 2.f - 1.f;
 }
 
 void GetSceneColor_float(float2 uv, out float4 SceneColor)
@@ -27,7 +34,10 @@ float RobertsCross(float3 samples[4])
 {
     const float3 difference_1 = samples[1] - samples[2];
     const float3 difference_2 = samples[0] - samples[3];
-    return sqrt(dot(difference_1, difference_1) + dot(difference_2, difference_2)) * _Robert_s_Cross_Multiplier;
+
+    // max possible result (2 * sqrt(2)) to [0,1]
+    float result = smoothstep(0, 2.828, sqrt(dot(difference_1, difference_1) + dot(difference_2, difference_2)));
+    return result * _Global_Multiplier;
 }
 
 // The same kernel logic as above, but for a single-value instead of a vector3.
@@ -35,11 +45,44 @@ float RobertsCross(float samples[4])
 {
     const float difference_1 = samples[1] - samples[2];
     const float difference_2 = samples[0] - samples[3];
-    return sqrt(difference_1 * difference_1 + difference_2 * difference_2) * _Robert_s_Cross_Multiplier;
+
+    // max possible result (sqrt(2)) to [0,1]
+    float result = sqrt(dot(difference_1, difference_1) + dot(difference_2, difference_2));
+    return result * _Global_Multiplier;
 }
 
-void ComputeOutlines_Roberts_Cross_float(float2 uv, out float4 OUT)
+void NDotV_float(float2 uv, out float OUT)
 {
+    float Depth;
+    GetDepth_float(uv, Depth);
+
+    float3 Normal;
+    GetNormal_float(uv, Normal);
+
+    float2 ndc = -(uv * 2.f - 1.f);
+
+    float3 vertPos = float3(ndc.x, ndc.y, SHADERGRAPH_SAMPLE_SCENE_DEPTH(uv));
+    float3 view = normalize(-vertPos);
+
+    float linearIncidence = abs(dot(normalize(Normal), view));
+
+    OUT = 1-linearIncidence;
+}
+
+void ComputeOutlines_Roberts_Cross_float(float2 uv, float NDotV, out float4 OUT)
+{
+    float cutoff = cos(radians(_Normal_Threshold)); // map all angles greater than threshold to 0
+    NDotV = smoothstep(cutoff, 1, NDotV);
+    _Outline_Thickness *= NDotV; // Scale all outlines by the angle between normal and view direction
+
+    float thisDepth;
+    GetDepth_float(uv, thisDepth);
+
+    if (_Visualize_Depth_Range)
+    {
+        OUT = float4(thisDepth, thisDepth, thisDepth, 1);
+        return;
+    }
     float2 texel_size = float2(1.0 / _ScreenParams.x, 1.0 / _ScreenParams.y);
 
     // Generate 4 diagonally placed samples.
@@ -67,19 +110,14 @@ void ComputeOutlines_Roberts_Cross_float(float2 uv, out float4 OUT)
     float edge_normal = RobertsCross(normal_samples);
     float edge_luminance = RobertsCross(luminance_samples);
 
-    // Threshold the edges (discontinuity must be above certain threshold to be counted as an depthEdge). The sensitivities are hardcoded here.
-
-    float thisDepth;
-    GetDepth_float(uv, thisDepth);
     float depth_threshold = thisDepth * _Depth_Threshold;
-    edge_depth = smoothstep(0, depth_threshold, edge_depth);
-    edge_depth = pow(edge_luminance, _Depth_Multiplier);
+    edge_depth = smoothstep(depth_threshold, 1, edge_depth);
+    edge_depth *= _Depth_Multiplier;
 
-    edge_normal = smoothstep(0, _Normal_Threshold, edge_normal);
-    edge_normal = pow(edge_normal, _Normal_Multiplier);
-
-    edge_luminance = smoothstep(0, _Luminance_Threshold, edge_luminance);
-    edge_luminance = pow(edge_luminance, _Luminance_Multiplier);
+    edge_normal *= _Normal_Multiplier;
+    
+    edge_luminance = smoothstep(_Luminance_Threshold, 1, edge_luminance);
+    edge_luminance *= _Luminance_Multiplier;
 
     // Combine the edges from depth/normals/luminance using the max operator.
     float edge = max(edge_depth, max(edge_normal, edge_luminance));
@@ -139,7 +177,7 @@ void ComputeOutlines_Sobel_float(float2 uv, out float4 OUT)
     const float half_width_f = floor(_Outline_Thickness * 0.5);
     const float half_width_c = ceil(_Outline_Thickness * 0.5);
 
-    float2 sobel = 0;
+    float2 sobelDepth = 0;
 
     // We have to run the sobel algorithm over the RGB channels separately
     float2 sobelR = 0;
@@ -154,7 +192,7 @@ void ComputeOutlines_Sobel_float(float2 uv, out float4 OUT)
 
         float depth;
         GetDepth_float(currUV, depth);
-        sobel += depth * float2(sobelXMatrix[i], sobelYMatrix[i]);
+        sobelDepth += depth * float2(sobelXMatrix[i], sobelYMatrix[i]);
 
         // Sample the scene color texture
         float4 rgb;
@@ -168,7 +206,7 @@ void ComputeOutlines_Sobel_float(float2 uv, out float4 OUT)
     }
 
     // Get the final sobel value
-    float depthEdge = length(sobel);
+    float depthEdge = length(sobelDepth);
 
     float thisDepth;
     GetDepth_float(uv, thisDepth);
