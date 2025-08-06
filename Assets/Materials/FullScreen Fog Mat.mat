@@ -32,6 +32,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Color_3D_Tex:
+        m_Texture: {fileID: 11700000, guid: 8639767f5588d4e1f986e699b0651f65, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Density_3D_Tex:
+        m_Texture: {fileID: 11700000, guid: 8639767f5588d4e1f986e699b0651f65, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Density_3D_Tex_Layer_2:
+        m_Texture: {fileID: 11700000, guid: 39b2bfc1b63ab4249ae01b3028b70615, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Fog_3D_Noise_Tex:
         m_Texture: {fileID: 11700000, guid: 0a255fd2f21d44da08003d46d1779efd, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -64,21 +76,25 @@ Material:
     - _3D_Noise_Tiling: 0.46
     - _ADDITIONAL_LIGHTS: 1
     - _ADDITIONAL_LIGHT_CALCULATE_SHADOWS: 1
-    - _Density_Multiplier: 0.5
-    - _Density_Threshold: 0.15
-    - _Fog_Speed: 0.02
+    - _Color_3D_Tex_Offset: 0.25
+    - _Color_3D_Tex_Tiling: 0.3
+    - _Density_3D_Tex_Tiling: 1
+    - _Density_Multiplier: 0.15
+    - _Density_Threshold: 0.035
+    - _Fog_Speed: 0.01
     - _Light_Contribution_Factor: 0.1
     - _Light_Contribution_Offset: 0
-    - _Light_Contribution_Scalar: 3
-    - _Light_Scattering: 0
+    - _Light_Contribution_Scalar: 10
+    - _Light_Scattering: 0.5
     - _MAIN_LIGHT: 0
     - _MAIN_LIGHT_SHADOWS_CASCADE: 1
     - _Max_Distance: 100
-    - _Noise_Offset: 2.5
+    - _Noise_Offset: 5
+    - _Noise_Tint_Scalar: 0.5
     - _SHADOWS_SOFT: 1
-    - _Step_Size: 2.5
+    - _Step_Size: 5
     m_Colors:
-    - _Fog_Color: {r: 0.54899424, g: 0.6110764, b: 0.6886792, a: 1}
-    - _Fog_Direction: {r: 0, g: -1, b: -1, a: 0}
-    - _Light_Contribution_Color: {r: 0.33873263, g: 0.34700698, b: 0.41509432, a: 1}
+    - _Fog_Color: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+    - _Fog_Direction: {r: 0, g: 0, b: -1, a: 0}
+    - _Light_Contribution_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
   m_BuildTextureStacks: []

@@ -47,6 +47,21 @@
         },
         {
             "m_Id": "5622d794e4e446dc9173e0dfaa5ad0df"
+        },
+        {
+            "m_Id": "d5a577dc99ca476b85513656bcf85a25"
+        },
+        {
+            "m_Id": "6ab7234551994942a72913a6aa9b2d76"
+        },
+        {
+            "m_Id": "a7b4f2b06f004878a110283fd4d3c5ad"
+        },
+        {
+            "m_Id": "eb49d116b31d4ab992be2de0e0bf0ff0"
+        },
+        {
+            "m_Id": "682453a04dae48418f8ff1148c620330"
         }
     ],
     "m_Keywords": [
@@ -78,6 +93,9 @@
             "m_Id": "1e30402f35d84d7592c83716250121b9"
         },
         {
+            "m_Id": "80d0c5e6e922447dbc238c216557d0b6"
+        },
+        {
             "m_Id": "f6399cc3e2464dab8a340523423ac96b"
         }
     ],
@@ -96,11 +114,28 @@
         },
         {
             "m_Id": "5c8fd0300ef748389d149d02096ecad4"
+        },
+        {
+            "m_Id": "2d20c24b27274c948d8c52da8bbaa8c7"
         }
     ],
     "m_GroupDatas": [],
     "m_StickyNoteDatas": [],
     "m_Edges": [
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "2d20c24b27274c948d8c52da8bbaa8c7"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "432aeba1d167424f8d2501a93e3c79fe"
+                },
+                "m_SlotId": 2
+            }
+        },
         {
             "m_OutputSlot": {
                 "m_Node": {
@@ -127,20 +162,6 @@
                     "m_Id": "027e28961ec3436f9b768736d46a1b75"
                 },
                 "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "5c8fd0300ef748389d149d02096ecad4"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "432aeba1d167424f8d2501a93e3c79fe"
-                },
-                "m_SlotId": 2
             }
         }
     ],
@@ -220,6 +241,160 @@
 }
 
 {
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GradientInputMaterialSlot",
+    "m_ObjectId": "06b5bded021747148b494ae79d266e3f",
+    "m_Id": 2,
+    "m_DisplayName": "FogColorGradient",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "FogColorGradient",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "serializedVersion": "2",
+        "key0": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+        },
+        "key1": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+        },
+        "key2": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key3": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key4": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key5": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key6": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key7": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "ctime0": 0,
+        "ctime1": 65535,
+        "ctime2": 0,
+        "ctime3": 0,
+        "ctime4": 0,
+        "ctime5": 0,
+        "ctime6": 0,
+        "ctime7": 0,
+        "atime0": 0,
+        "atime1": 65535,
+        "atime2": 0,
+        "atime3": 0,
+        "atime4": 0,
+        "atime5": 0,
+        "atime6": 0,
+        "atime7": 0,
+        "m_Mode": 0,
+        "m_ColorSpace": -1,
+        "m_NumColorKeys": 2,
+        "m_NumAlphaKeys": 2
+    },
+    "m_DefaultValue": {
+        "serializedVersion": "2",
+        "key0": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+        },
+        "key1": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+        },
+        "key2": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key3": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key4": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key5": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key6": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key7": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "ctime0": 0,
+        "ctime1": 65535,
+        "ctime2": 0,
+        "ctime3": 0,
+        "ctime4": 0,
+        "ctime5": 0,
+        "ctime6": 0,
+        "ctime7": 0,
+        "atime0": 0,
+        "atime1": 65535,
+        "atime2": 0,
+        "atime3": 0,
+        "atime4": 0,
+        "atime5": 0,
+        "atime6": 0,
+        "atime7": 0,
+        "m_Mode": 0,
+        "m_ColorSpace": -1,
+        "m_NumColorKeys": 2,
+        "m_NumAlphaKeys": 2
+    }
+}
+
+{
     "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
     "m_ObjectId": "0d167d048d9d450fae4cbc800b310b1f",
@@ -278,7 +453,7 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.CategoryData",
     "m_ObjectId": "1e30402f35d84d7592c83716250121b9",
-    "m_Name": "Fog Noise Attributes",
+    "m_Name": "Fog Density Noise Attributes",
     "m_ChildObjectList": [
         {
             "m_Id": "2ae4161ca808456084af69f3d2186240"
@@ -327,10 +502,10 @@
     "m_Guid": {
         "m_GuidSerialized": "a9218f5e-62cf-4181-9109-3f0f3b428266"
     },
-    "m_Name": "Fog 3D Noise Tex",
+    "m_Name": "Density 3D Tex",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Fog 3D Noise Tex",
-    "m_DefaultReferenceName": "_Fog_3D_Noise_Tex",
+    "m_RefNameGeneratedByDisplayName": "Density 3D Tex",
+    "m_DefaultReferenceName": "_Density_3D_Tex",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -372,6 +547,42 @@
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "2d20c24b27274c948d8c52da8bbaa8c7",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -726.0,
+            "y": 77.00001525878906,
+            "width": 167.00006103515626,
+            "height": 33.999961853027347
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "efc8701cefe243b2860baebfa5e970c3"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 1,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "d5a577dc99ca476b85513656bcf85a25"
     }
 }
 
@@ -476,7 +687,7 @@
             "m_Id": "628b4e71e844488eae82156deecfb57a"
         },
         {
-            "m_Id": "ce9aacb5818f4b349c992ad08f53a881"
+            "m_Id": "06b5bded021747148b494ae79d266e3f"
         },
         {
             "m_Id": "0ee404fb07164ce4aa3799c3d7356865"
@@ -719,6 +930,34 @@
 
 {
     "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "682453a04dae48418f8ff1148c620330",
+    "m_Guid": {
+        "m_GuidSerialized": "bef17eb2-bbf9-4aac-98b5-2c702f6f69c6"
+    },
+    "m_Name": "Color 3D Tex Offset",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Color 3D Tex Offset",
+    "m_DefaultReferenceName": "_Color_3D_Tex_Offset",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.5,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.ShaderKeyword",
     "m_ObjectId": "6a84d5f8621f4d278c94115dc5046ca0",
     "m_Guid": {
@@ -740,6 +979,33 @@
     "m_Entries": [],
     "m_Value": 1,
     "m_IsEditable": true
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture3DShaderProperty",
+    "m_ObjectId": "6ab7234551994942a72913a6aa9b2d76",
+    "m_Guid": {
+        "m_GuidSerialized": "89c53df9-cd33-4145-9772-7b7d3b2e0b7e"
+    },
+    "m_Name": "Color 3D Tex",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Color 3D Tex",
+    "m_DefaultReferenceName": "_Color_3D_Tex",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":11700000,\"guid\":\"8639767f5588d4e1f986e699b0651f65\",\"type\":3}}",
+        "m_Guid": ""
+    },
+    "m_Modifiable": true
 }
 
 {
@@ -895,6 +1161,30 @@
 }
 
 {
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "80d0c5e6e922447dbc238c216557d0b6",
+    "m_Name": "Fog Color Noise Attributes",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "d5a577dc99ca476b85513656bcf85a25"
+        },
+        {
+            "m_Id": "6ab7234551994942a72913a6aa9b2d76"
+        },
+        {
+            "m_Id": "a7b4f2b06f004878a110283fd4d3c5ad"
+        },
+        {
+            "m_Id": "682453a04dae48418f8ff1148c620330"
+        },
+        {
+            "m_Id": "eb49d116b31d4ab992be2de0e0bf0ff0"
+        }
+    ]
+}
+
+{
     "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Vector3ShaderProperty",
     "m_ObjectId": "83aaf4be46c441beb6b3f87ffe089b7f",
@@ -954,10 +1244,10 @@
     "m_Guid": {
         "m_GuidSerialized": "2a6b0f11-86d3-4e5a-8d85-47b1cbd015b2"
     },
-    "m_Name": "3D Noise Tiling",
+    "m_Name": "Density 3D Tex Tiling",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "3D Noise Tiling",
-    "m_DefaultReferenceName": "_3D_Noise_Tiling",
+    "m_RefNameGeneratedByDisplayName": "Density 3D Tex Tiling",
+    "m_DefaultReferenceName": "_Density_3D_Tex_Tiling",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -998,6 +1288,34 @@
     "m_Entries": [],
     "m_Value": 1,
     "m_IsEditable": true
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "a7b4f2b06f004878a110283fd4d3c5ad",
+    "m_Guid": {
+        "m_GuidSerialized": "4c8796a9-76a2-4571-841d-438ce617dc5e"
+    },
+    "m_Name": "Color 3D Tex Tiling",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Color 3D Tex Tiling",
+    "m_DefaultReferenceName": "_Color_3D_Tex_Tiling",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.10000000149011612,
+    "m_FloatType": 1,
+    "m_RangeValues": {
+        "x": 0.10000000149011612,
+        "y": 10.0
+    }
 }
 
 {
@@ -1115,21 +1433,6 @@
 }
 
 {
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "ce9aacb5818f4b349c992ad08f53a881",
-    "m_Id": 2,
-    "m_DisplayName": "Time",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Time",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
     "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
     "m_ObjectId": "d1a1fbfffa03414197db860e2d8bab79",
@@ -1170,6 +1473,99 @@
     "m_Value": 1.0,
     "m_DefaultValue": 1.0,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GradientShaderProperty",
+    "m_ObjectId": "d5a577dc99ca476b85513656bcf85a25",
+    "m_Guid": {
+        "m_GuidSerialized": "10cf1022-f027-40ba-b2b9-7691fa67ea37"
+    },
+    "m_Name": "Fog Color Gradient",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Fog Color Gradient",
+    "m_DefaultReferenceName": "_Fog_Color_Gradient",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": false,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 1,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "serializedVersion": "2",
+        "key0": {
+            "r": 0.009433984756469727,
+            "g": 0.009433984756469727,
+            "b": 0.009433984756469727,
+            "a": 1.0
+        },
+        "key1": {
+            "r": 0.025751352310180665,
+            "g": 0.02128547430038452,
+            "b": 0.021695012226700784,
+            "a": 1.0
+        },
+        "key2": {
+            "r": 0.28301888704299929,
+            "g": 0.025364892557263376,
+            "b": 0.025364892557263376,
+            "a": 0.0
+        },
+        "key3": {
+            "r": 0.04963403940200806,
+            "g": 0.041274070739746097,
+            "b": 0.2552179992198944,
+            "a": 0.0
+        },
+        "key4": {
+            "r": 0.048774272203445438,
+            "g": 0.04110262542963028,
+            "b": 0.25725001096725466,
+            "a": 0.0
+        },
+        "key5": {
+            "r": 0.038714855909347537,
+            "g": 0.038714855909347537,
+            "b": 0.28301888704299929,
+            "a": 0.0
+        },
+        "key6": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "key7": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "ctime0": 0,
+        "ctime1": 14842,
+        "ctime2": 36044,
+        "ctime3": 41056,
+        "ctime4": 51272,
+        "ctime5": 65535,
+        "ctime6": 0,
+        "ctime7": 0,
+        "atime0": 0,
+        "atime1": 65535,
+        "atime2": 0,
+        "atime3": 0,
+        "atime4": 0,
+        "atime5": 0,
+        "atime6": 0,
+        "atime7": 0,
+        "m_Mode": 2,
+        "m_ColorSpace": 1,
+        "m_NumColorKeys": 6,
+        "m_NumAlphaKeys": 2
+    }
 }
 
 {
@@ -1243,16 +1639,44 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "eb49d116b31d4ab992be2de0e0bf0ff0",
+    "m_Guid": {
+        "m_GuidSerialized": "af6a0324-df4a-46b6-9fe2-f79ca527e3d7"
+    },
+    "m_Name": "Noise Tint Scalar",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Noise Tint Scalar",
+    "m_DefaultReferenceName": "_Noise_Tint_Scalar",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.5,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Texture3DShaderProperty",
     "m_ObjectId": "eec0684b5cd5440c9d24a493d746a7a1",
     "m_Guid": {
         "m_GuidSerialized": "8d5e7079-3b26-431d-b4e3-3790251a2550"
     },
-    "m_Name": "Fog 3D Noise Tex 2",
+    "m_Name": "Density 3D Tex Layer 2",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Fog 3D Noise Tex 2",
-    "m_DefaultReferenceName": "_Fog_3D_Noise_Tex_2",
+    "m_RefNameGeneratedByDisplayName": "Density 3D Tex Layer 2",
+    "m_DefaultReferenceName": "_Density_3D_Tex_Layer_2",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -1267,6 +1691,18 @@
         "m_Guid": ""
     },
     "m_Modifiable": true
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GradientMaterialSlot",
+    "m_ObjectId": "efc8701cefe243b2860baebfa5e970c3",
+    "m_Id": 0,
+    "m_DisplayName": "Fog Color Gradient",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3
 }
 
 {
