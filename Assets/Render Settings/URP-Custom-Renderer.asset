@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8faec35144280c146ac2395f7d7187de, type: 3}
   m_Name: FullScreenFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     renderPassEvent: 500
     material: {fileID: 2100000, guid: 991492404e2544d7783ab1a3c581dc83, type: 2}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8faec35144280c146ac2395f7d7187de, type: 3}
   m_Name: FullScreenFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     renderPassEvent: 550
     material: {fileID: 2100000, guid: 19faac408b6674338a516f4041eada05, type: 2}
