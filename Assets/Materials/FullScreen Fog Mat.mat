@@ -77,24 +77,24 @@ Material:
     - _ADDITIONAL_LIGHTS: 1
     - _ADDITIONAL_LIGHT_CALCULATE_SHADOWS: 1
     - _Color_3D_Tex_Offset: 0.25
-    - _Color_3D_Tex_Tiling: 0.3
-    - _Density_3D_Tex_Tiling: 1
+    - _Color_3D_Tex_Tiling: 0.28
+    - _Density_3D_Tex_Tiling: 8
     - _Density_Multiplier: 0.15
-    - _Density_Threshold: 0.035
-    - _Fog_Speed: 0.01
+    - _Density_Threshold: 0.572
+    - _Fog_Speed: 0.005
     - _Light_Contribution_Factor: 0.1
     - _Light_Contribution_Offset: 0
-    - _Light_Contribution_Scalar: 10
-    - _Light_Scattering: 0.5
+    - _Light_Contribution_Scalar: 58.9
+    - _Light_Scattering: 0
     - _MAIN_LIGHT: 0
     - _MAIN_LIGHT_SHADOWS_CASCADE: 1
     - _Max_Distance: 100
     - _Noise_Offset: 5
-    - _Noise_Tint_Scalar: 0.5
+    - _Noise_Tint_Scalar: 0.77
     - _SHADOWS_SOFT: 1
     - _Step_Size: 5
     m_Colors:
-    - _Fog_Color: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
-    - _Fog_Direction: {r: 0, g: 0, b: -1, a: 0}
-    - _Light_Contribution_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+    - _Fog_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+    - _Fog_Direction: {r: 0, g: -1, b: -1, a: 0}
+    - _Light_Contribution_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
   m_BuildTextureStacks: []
