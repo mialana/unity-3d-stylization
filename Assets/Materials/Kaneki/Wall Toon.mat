@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8828647600313860200
+--- !u!114 &-4644504732326038203
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Body
+  m_Name: Wall Toon
   m_Shader: {fileID: -6465566751694194690, guid: 4bb4208ba483a491cbb7cb889d941002,
     type: 3}
   m_Parent: {fileID: 0}
@@ -124,7 +124,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Hard_Specular_Cutoff: 0.68
+    - _Hard_Specular_Cutoff: 0.75
     - _Hard_Specular_Mode: 0
     - _MAIN_LIGHT_SHADOWS_CASCADE: 1
     - _Metallic: 0
@@ -137,23 +137,23 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Specular_Smoothness: 0.43
+    - _Specular_Smoothness: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Texture_Blend_Opacity: 0.48
-    - _Texture_Rotation: 106.4
-    - _Texture_Tiling: 5
+    - _Texture_Blend_Opacity: 0.216
+    - _Texture_Rotation: 109
+    - _Texture_Tiling: 2.13
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Highlight: {r: 0.30273786, g: 0.25698647, b: 0.3301887, a: 1}
-    - _Midtone: {r: 0.17697802, g: 0.14297792, b: 0.1981132, a: 1}
+    - _Highlight: {r: 0.12784801, g: 0.12949915, b: 0.16037738, a: 1}
+    - _Midtone: {r: 0.09358491, g: 0.102316566, b: 0.128, a: 1}
     - _Ramped_Diffuse_Values: {r: 0.4, g: 0.6, b: 1, a: 0}
-    - _Shadow: {r: 0.08256941, g: 0.06363474, b: 0.09433961, a: 1}
+    - _Shadow: {r: 0.051575053, g: 0.05660379, b: 0.042452842, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Thresholds: {r: 0.02, g: 0.4, b: 0, a: 0}
+    - _Thresholds: {r: 0.5, g: 0.9, b: 0, a: 0}
   m_BuildTextureStacks: []

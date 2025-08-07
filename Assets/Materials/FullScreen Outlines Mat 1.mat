@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FullScreen Outlines Mat
+  m_Name: FullScreen Outlines Mat 1
   m_Shader: {fileID: -6465566751694194690, guid: 07487f7a52aa447428771952ed260356,
     type: 3}
   m_Parent: {fileID: 0}
@@ -48,16 +48,16 @@ Material:
     m_Floats:
     - _Debug_View: 0
     - _Depth_Cutoff: 5
-    - _Depth_Multiplier: 250
+    - _Depth_Multiplier: 0
     - _Depth_Sensitivity: 3
-    - _Depth_Threshold: 0
-    - _Global_Multiplier: 5
-    - _Luminance_Multiplier: 1.5
+    - _Depth_Threshold: 0.374
+    - _Global_Multiplier: 1
+    - _Luminance_Multiplier: 0
     - _Luminance_Threshold: 0.5
-    - _Normal_Multiplier: 3
-    - _Normal_Threshold: 60
-    - _Outline_Thickness: 2
-    - _RGB_Multiplier: 2.1
+    - _Normal_Multiplier: 1
+    - _Normal_Threshold: 90
+    - _Outline_Thickness: 2.5
+    - _RGB_Multiplier: 3.94
     - _RGB_Threshold: 0
     - _Robert_s_Cross_Multiplier: 1
     - _Use_Sobel_Technique: 0
@@ -65,5 +65,5 @@ Material:
     m_Colors:
     - _Adjust_Texel: {r: 4.52, g: 5.71, b: 0, a: 0}
     - _Depth_Range: {r: 0, g: 0.5, b: 0, a: 0}
-    - _Outline_Color: {r: 0, g: 0, b: 0, a: 0.011764706}
+    - _Outline_Color: {r: 0.01662839, g: 0.016108923, b: 0.01886791, a: 0.011764706}
   m_BuildTextureStacks: []
